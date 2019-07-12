@@ -1,8 +1,12 @@
 import React from "react"
+import "./Header.css"
 
 function Header(){
     return(
-        <header className="navbar">Header</header>
+        <div className="container">
+
+        <h2>Add</h2>
+        </div>
     )
 }
 
