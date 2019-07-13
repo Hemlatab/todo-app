@@ -1,11 +1,11 @@
 import React from "react"
 import Header from "./Header"
-// import Footer from "./Footer"
+import "./Footer.css"
 
 function Footer(){
     return(
-        <div>
-            <h1>Footer</h1>
+        <div className="copyright">
+            <p className="copyright">Copyright &copy; {new Date().getFullYear()} </p>
         </div>
     )
 }

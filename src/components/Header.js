@@ -5,7 +5,7 @@ function Header(){
     return(
         <div className="container">
 
-        <h2>Add</h2>
+        <h2>My Todo App</h2>
         </div>
     )
 }
