@@ -6,6 +6,7 @@ function TodoItem(){
         <div className="todo-item">
         <p><input type="checkbox" />
         Placeholder text here</p>
+
         </div>
     )
 }

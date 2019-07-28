@@ -1,0 +1,11 @@
+input[type=text]{
+    font-size: 16px;
+    color:red;
+    padding: 4px;
+}
+button{
+    width:50px;
+    font-size: 16px;
+    background-color: green;
+    padding: 4px;
+}
