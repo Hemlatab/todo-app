@@ -2,17 +2,18 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import Todos from "./Todos";
+import todosData from "./todosData";
 import AddTodo from "./AddTodo";
+import TodoItem from "./TodoItem"
 
 
   function App (){
-    let items= ['read','write','learn','code']
+    const todoItems = todosData.map(item => <TodoItem key={item.id} item={item}/>)
     return(
       <div className="todo-list">
        <Header />
        <AddTodo />
-        <Todos todoitems={items} isactive='test' />
+        {todoItems}
         <Footer />
       </div>
     )
