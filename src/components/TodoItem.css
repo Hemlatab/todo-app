@@ -5,6 +5,9 @@ body{
 
 .todo-item{
     display: flex;
-    justify-content: center;
     background-color:#fffccc;
+}
+.todo-item p{
+    font-size: 18px;
+    color:#333333
 }

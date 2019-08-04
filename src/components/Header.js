@@ -1,11 +1,11 @@
 import React from "react"
 import "./Header.css"
 
-function Header(){
+function Header(props){
     return(
         <div className="container">
 
-        <h2>My Todo App</h2>
+        <h2>{props.title}</h2>
         </div>
     )
 }
