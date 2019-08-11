@@ -26,12 +26,6 @@ class AddTodoForm extends React.Component{
         event.preventDefault()
         if(this.state.todoText!==''){
 
-            // this.setState({
-            //     todoItems:[...this.state.todoItems,{title:this.state.todoText,completed:false, id:this.state.currentIndex}],
-            //     todoText:'',
-                
-            //     currentIndex:this.state.currentIndex +1
-            // })
             this.setState((state) => {
                 return({
                     todoItems:[...state.todoItems,{title:state.todoText,completed:false, id:state.currentIndex}],
@@ -47,22 +41,34 @@ class AddTodoForm extends React.Component{
 
     handleCheckbox = (id) => {
        
-        let index=this.state.todoItems[id];
-        console.log(index.id);
-        let result = this.state.todoItems.filter(()=>{
-            return index.id!==id;
+       let result = this.state.todoItems.map(function(todo){
+           
+           if(todo.id === id){
+                return{
+                    completed:!todo.completed,
+                    id:todo.id,
+                    title:todo.title
+                }
+           }
+           else{
+                return todo
+           }
+
+       })
+       console.log(result)
+
+       this.setState({todoItems:result})
+    }
+    handleDelete = (event,id) => {
+       
+        let res = this.state.todoItems.filter(function(task){
+            return task.id !== id;
             
         })
-    
-        console.log(id);
-        console.log(this.state.todoItems[id].completed)
-        // let title=this.state.todoItems[id].title;
-        // let status=this.state.todoItems[id].completed;
-        // this.setState({
-        //     todoItems:[...result,{title:title,completed:!status}]})
-        this.setState((state,props)=> {
-            return ({todoItems:[...result,{title:state.todoItems[id].title,completed:!state.todoItems[id].completed}]})
-        })
+        this.setState({todoItems:res})
+        console.log(res)
+      
+
     }
     render(){
        
@@ -75,9 +81,15 @@ class AddTodoForm extends React.Component{
         </form> 
             {this.state.todoItems.map((task)=>{
           
-        return <h3 className={task.completed?'complete':''} key={task.id}><input type="checkbox" onClick={()=>this.handleCheckbox(task.id)} />{task.title}</h3>
-        //return <TodoItem todo={task.title} handleCheckbox={this.handleCheckbox} id={id} status={this.state.todoItems[id].completed} key={id}/>
+        return <TodoItem 
+         todo={task.title}
+         handleCheckbox={this.handleCheckbox} 
+         handleDelete={this.handleDelete}
+         id={task.id} 
+         status={task.completed} 
+         key={task.id}/>
            })}
+          
           
         </>
         )

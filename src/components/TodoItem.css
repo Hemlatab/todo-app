@@ -11,3 +11,9 @@ body{
     font-size: 18px;
     color:#333333
 }
+.delete-btn{
+    color:red;
+    padding: 1px;
+    background:transparent;
+    margin-left: 10px;
+}

@@ -1,5 +1,7 @@
 .complete{
     text-decoration: line-through;
+    text-decoration-color: red;
+    text-decoration-style: double;
 }
 
 input[type='text']{
@@ -14,4 +16,7 @@ button{
 }
 h1{
     color: maroon;
+}
+h3{
+    color:#666666;
 }
