@@ -1,0 +1,17 @@
+.complete{
+    text-decoration: line-through;
+}
+
+input[type='text']{
+    padding:15px;
+    width: 60%;
+}
+
+button{
+    padding: 15px;
+    background-color: goldenrod;
+    font-size: 14px;
+}
+h1{
+    color: maroon;
+}

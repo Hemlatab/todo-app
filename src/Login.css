@@ -1,0 +1,19 @@
+input[type='text']{
+   padding: 10px;
+   margin: 10px;
+
+}
+button{
+    padding: 10px;
+}
+
+.login{
+    width:60%;
+    box-shadow: 0 0 5px 2px red;
+    margin:10px auto;
+    padding: 10px;
+    border-radius:10px;
+}
+h2{
+    color:brown;
+}
